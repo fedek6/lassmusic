@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import VideoBg from "../components/VideoBg.astro";
+import Content from "../components/Content.astro";
+---
+
+<Layout title="LASS">
+  <main>
+    <Content />
+  </main>
+  <VideoBg />
+</Layout>
+<style lang="scss">
+  main {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+  }
+</style>
