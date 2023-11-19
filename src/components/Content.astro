@@ -4,19 +4,19 @@ import loveholic from "../images/loveholic.jpg";
 import staloweMagnolie from "../images/LASS_ COVER 1 _ stalowe magnolie.jpg";
 
 ---
-<article>
-    <div>
-        <a href="https://adm.ffm.to/StaloweMagnolie" target="_blank">
-            <Image src={staloweMagnolie}  width="1000"
+<article class="cover-container">
+    <div class="cover-container__cover">
+        <a href="https://adm.ffm.to/StaloweMagnolie" target="_blank" class="cover-container__link">
+            <Image src={staloweMagnolie} class="cover-container__image"  width="1000"
             height="1000"
             decoding="async"
             widths={[240, 540, 720, 1000]}
             alt="Stalowe Magnolie" />
         </a>
     </div>
-    <div>
-        <a href="https://ffm.to/LOVEHOLIC" target="_blank">
-            <Image src={loveholic}   width="1000"
+    <div class="cover-container__cover">
+        <a href="https://ffm.to/LOVEHOLIC" target="_blank" class="cover-container__link">
+            <Image src={loveholic} class="cover-container__image"  width="1000"
             height="1000"
             decoding="async"
             widths={[240, 540, 720, 1000]}
@@ -25,7 +25,7 @@ import staloweMagnolie from "../images/LASS_ COVER 1 _ stalowe magnolie.jpg";
     </div>
 </article>
 <style lang="scss">
-    article {
+    .cover-container {
         width: 100%;
         max-width: 50vw;
         display: flex;
@@ -34,19 +34,24 @@ import staloweMagnolie from "../images/LASS_ COVER 1 _ stalowe magnolie.jpg";
         gap: 64px;
     }
 
-    div {
+    .cover-container__cover {
         flex: 1 1 auto;
         align-self: auto;
+        flex-basis: 50%;
     }
-    img {
-        width: 100%;
-        height: auto;
-        box-shadow: 8px 8px 24px 0px rgba(0, 0, 0, 0.1);
+
+
+    .cover-container__image {
+            width: 100%;
+            height: auto;
+            box-shadow: 8px 8px 24px 0px rgba(0, 0, 0, 0.1);
     }
-    a > img {
+
+    .cover-container__link > img {
         transition: transform 0.3s ease-in-out;
     }
-    a:hover > img {
+
+    .cover-container__link:hover > img {
         transform: scale(1.05);
 
     }
