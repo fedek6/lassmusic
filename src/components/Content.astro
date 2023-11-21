@@ -1,58 +1,99 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import loveholic from "../images/loveholic.jpg";
 import staloweMagnolie from "../images/LASS_ COVER 1 _ stalowe magnolie.jpg";
-
 ---
+
 <article class="cover-container">
-    <div class="cover-container__cover">
-        <a href="https://adm.ffm.to/StaloweMagnolie" target="_blank" class="cover-container__link">
-            <Image src={staloweMagnolie} class="cover-container__image"  width="1000"
-            height="1000"
-            decoding="async"
-            widths={[240, 540, 720, 1000]}
-            alt="Stalowe Magnolie" />
-        </a>
-    </div>
-    <div class="cover-container__cover">
-        <a href="https://ffm.to/LOVEHOLIC" target="_blank" class="cover-container__link">
-            <Image src={loveholic} class="cover-container__image"  width="1000"
-            height="1000"
-            decoding="async"
-            widths={[240, 540, 720, 1000]}
-            alt="Loveholic" />
-        </a>
-    </div>
+  <div class="cover-container__cover">
+    <a
+      href="https://adm.ffm.to/StaloweMagnolie"
+      target="_blank"
+      class="cover-container__link"
+    >
+      <Image
+        src={staloweMagnolie}
+        class="cover-container__image"
+        width="1000"
+        height="1000"
+        decoding="async"
+        widths={[240, 540, 720, 1000]}
+        alt="Stalowe Magnolie"
+      />
+    </a>
+  </div>
+  <div class="cover-container__cover">
+    <a
+      href="https://ffm.to/LOVEHOLIC"
+      target="_blank"
+      class="cover-container__link"
+    >
+      <Image
+        src={loveholic}
+        class="cover-container__image"
+        width="1000"
+        height="1000"
+        decoding="async"
+        widths={[240, 540, 720, 1000]}
+        alt="Loveholic"
+      />
+    </a>
+  </div>
 </article>
 <style lang="scss">
+  @media (orientation: portrait) {
     .cover-container {
-        width: 100%;
-        max-width: 50vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 64px;
+      width: 100%;
+      max-width: 66vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-direction: column;
+
+      box-sizing: border-box;
     }
 
     .cover-container__cover {
-        flex: 1 1 auto;
-        align-self: auto;
-        flex-basis: 50%;
+      flex: 1 1 auto;
+      align-self: auto;
+      flex-basis: 100%;
     }
 
+    .cover-container__image {
+      width: 100%;
+      height: auto;
+      box-shadow: 8px 8px 24px 0px rgba(0, 0, 0, 0.1);
+    }
+  }
+  @media (orientation: landscape) {
+    .cover-container {
+      width: 100%;
+      max-width: 50vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 64px;
+    }
+
+    .cover-container__cover {
+      flex: 1 1 auto;
+      align-self: auto;
+      flex-basis: 50%;
+    }
 
     .cover-container__image {
-            width: 100%;
-            height: auto;
-            box-shadow: 8px 8px 24px 0px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      height: auto;
+      box-shadow: 8px 8px 24px 0px rgba(0, 0, 0, 0.1);
     }
 
     .cover-container__link > img {
-        transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
     }
 
     .cover-container__link:hover > img {
-        transform: scale(1.05);
-
+      transform: scale(1.05);
     }
+  }
 </style>
